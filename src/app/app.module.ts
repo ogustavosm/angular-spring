@@ -24,7 +24,7 @@ import { CategoryComponent } from './category/category.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MaterialModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
