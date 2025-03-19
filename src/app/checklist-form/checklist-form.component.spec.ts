@@ -8,10 +8,12 @@ describe('ChecklistFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ChecklistFormComponent]
+      declarations: [ ChecklistFormComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ChecklistFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

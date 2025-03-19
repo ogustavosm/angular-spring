@@ -1,6 +1,6 @@
 import { Category } from "./category";
 
-export class ChecklistItem {
+export class ChecklistItem{
 
   public guid!: string;
   public completed!: boolean;

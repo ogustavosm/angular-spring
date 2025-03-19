@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   standalone: false,
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
+
+  public copywrites = 'Desenvolvido para o curso da Udemy.';
 
   constructor() { }
-
-  public copywrite = 'Desenvolvido por Gustavo Moura'
 
   ngOnInit(): void {
   }

@@ -1,23 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
   standalone: false,
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
-  @Input() sidenav!: MatSidenav;
+  @Input()
+  public sideNavBar!: MatSidenav;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public openSideNav() {
-    this.sidenav.toggle();
+  public openSideNav(){
+    this.sideNavBar.toggle();
   }
-
 }

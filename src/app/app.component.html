@@ -1,57 +1,51 @@
-<div class = "main-container">
+<div class="main-container">
 
-  <app-header [sidenav]="sidenav"> </app-header>
+  <app-header [sideNavBar]="sidenav"></app-header>
 
   <mat-sidenav-container class="sidenav-container">
-
     <mat-sidenav #sidenav class="w-10p">
 
+
       <mat-list>
-        <mat-list-item (click)="sidenav.toggle()">
+
+        <mat-list-item>
           <mat-icon>home</mat-icon>
           <span class="ml-15">
-            <a [routerLink]="['/']">Home</a>
+            <a [routerLink]="['/']" (click)="sidenav.toggle()">Home</a>
           </span>
         </mat-list-item>
-      </mat-list>
 
-      <mat-divider> </mat-divider>
+        <mat-divider></mat-divider>
 
-      <mat-list>
-        <mat-list-item (click)="sidenav.toggle()">
+        <mat-list-item>
           <mat-icon>list</mat-icon>
           <span class="ml-15">
-            <a [routerLink]="['/categoria']">Categoria</a>
+            <a [routerLink]="['/categoria']" (click)="sidenav.toggle()">Categoria</a>
           </span>
         </mat-list-item>
-      </mat-list>
 
-      <mat-divider> </mat-divider>
+        <mat-divider></mat-divider>
 
-      <mat-list>
-        <mat-list-item (click)="sidenav.toggle()">
+        <mat-list-item>
           <mat-icon>check</mat-icon>
           <span class="ml-15">
-            <a [routerLink]="['/checklist']">Checklist</a>
+            <a [routerLink]="['/checklist']" (click)="sidenav.toggle()">Checklist</a>
           </span>
         </mat-list-item>
+
       </mat-list>
+
 
     </mat-sidenav>
 
     <mat-sidenav-content>
 
-      <router-outlet> </router-outlet>
+      <router-outlet></router-outlet>
 
     </mat-sidenav-content>
-
   </mat-sidenav-container>
 
-  <app-footer> </app-footer>
+  <app-footer></app-footer>
+
 
 </div>
-
-
-
-
-

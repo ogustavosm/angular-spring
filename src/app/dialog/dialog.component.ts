@@ -1,44 +1,43 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
   standalone: false,
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.css'
+  styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
 
-  constructor(@Inject(MatDialogRef) public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(private dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) private data: any) {
 
-    if (data.leftButtonLabel){
-      this.leftButtonLabel = data.leftButtonLabel;
+    if(data.msg != null) {
+      this.dialogMsg = data.msg;
     }
 
-    if (data.rightButtonLabel){
-      this.rightButtonLabel = data.rightButtonLabel;
+    if(data.leftButton != null) {
+      this.leftButtonLabel = data.leftButton;
     }
 
-    if (this.dialogMsg){
-      this.dialogMsg = data.dialogMsg;
+    if(data.rightButton != null) {
+      this.rightButtonLabel = data.rightButton;
     }
+
   }
-
-  public dialogMsg = 'Deseja continuar com essa ação?';
-  public leftButtonLabel = 'Cancelar';
-  public rightButtonLabel = 'Ok';
 
   ngOnInit(): void {
   }
 
+  public dialogMsg = 'Você deseja confirmar essa ação?';
+  public leftButtonLabel = 'Botão esquerdo';
+  public rightButtonLabel = 'Botão direito';
 
-  public clickedLeftButton(){
+  public cancelAction(): void{
     this.dialogRef.close(false);
   }
 
-  public clickedRightButton(){
-    this.dialogRef.close(false);
+  public confirmAction(): void{
+      this.dialogRef.close(true);
   }
-
 
 }
